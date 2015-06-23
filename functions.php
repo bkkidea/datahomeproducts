@@ -28,18 +28,21 @@ function datahome_promotion() {
 function promtion_detail() {
   $screens = array( 'promotions');
   foreach ( $screens as $screen ) {
-    add_meta_box('promotions_sectionid',__( 'DATAHOME PROMOTION', 'promotion_data' ),'promotion_data_input',$screen);
+    add_meta_box('promotions_sectionid',__( 'DATAHOME PROMOTION', 'promotion_data' ),'promotion_data_input',$screen,'side');
   }
 
 }
 
 function promotion_data_input(){
   global $post;
+  $pro_name = get_post_meta($post->ID, 'pro_name', true);
   $built_in_type = get_post_meta($post->ID, 'built_in_type', true);
   $area = get_post_meta($post->ID, 'area', true);
   $regular_price = get_post_meta($post->ID, 'regular_price', true);
   $sale_price = get_post_meta($post->ID, 'sale_price', true);
+  
   echo '<div class="promotion_data_input">';
+  echo '<div><lable>ชื่อโปรโมชั่น :</lable><input type="text" name="pro_name" id="pro_name" value="'.$pro_name.'" /> </div>';
   echo '<div><lable>ประเภทห้อง :</lable><input type="text" name="built_in_type" id="built_in_type" value="'.$built_in_type.'" /> </div>';
   echo '<div><lable>พื้นที่ : </lable><input type="text" name="area" id="area" value="'.$area.'" /> ตร.ม.</div>';
   echo '<div><lable>ราคา : </lable><input type="text" name="regular_price" id="regular_price" value="'.$regular_price.'" /> บาท</div>';
@@ -53,6 +56,7 @@ function save_promotion(){
   update_post_meta($post->ID, "area", $_POST["area"]);
   update_post_meta($post->ID, "regular_price", $_POST["regular_price"]);
   update_post_meta($post->ID, "sale_price", $_POST["sale_price"]);
+  update_post_meta($post->ID, "pro_name", $_POST["pro_name"]);
 }
 
 add_action( 'add_meta_boxes', 'promtion_detail' );

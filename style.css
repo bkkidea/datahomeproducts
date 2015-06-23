@@ -6,10 +6,13 @@ Author URI: http://excworld.com
 Description: For Datahomeproduct co.,ltd.
 Version: 1.0
 */
-
 body {
   padding-top: 50px;
   padding-bottom: 0px;
+}
+img {
+  width: 100%;
+  height: auto;
 }
 a:hover {
   text-decoration: none;
@@ -122,9 +125,12 @@ hr {
 .well .container a {
   color: #fff;
 }
+.datahome-product .data {
+  font-size: 18px;
+}
 .datahome-product h2 {
   color: #009345;
-  font-size: 28px;
+  font-size: 24px;
 }
 .datahome-product .price {
   color: #a3a3a3;
@@ -134,4 +140,10 @@ hr {
 .datahome-product .price .price2,
 .datahome-product .price built-type {
   font-size: 20px;
+}
+.datahome-product .price2 {
+  font-weight: bold;
+}
+.datahome-product .pro-name {
+  color: #bb4e00;
 }

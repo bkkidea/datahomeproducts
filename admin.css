@@ -6,3 +6,6 @@
   margin-top: 5px;
   display: block;
 }
+.promotion_data_input input {
+  width: 120px;
+}

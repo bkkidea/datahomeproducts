@@ -8,77 +8,32 @@
           <!-- top article-->
           <div style="margin-bottom:-30px;" class="panel panel-default">
             <div style="padding-top:0px;" class="datahome-product panel-body">
-              <h2>ชื่อโปรโมชั่น : ดาต้าโฮมโปรดักส์ จำกัด</h2>
-              <div class="built-type">BUILT-IN TYPE : B 1</div>
-              <div class="size">พื้นที : 100 ตร.ม.</div>
-              <div class="price">ปกติ : 
-                <strike>300,000 บาท</strike>
+            <?php if (have_posts()) : while (have_posts()) : the_post();?>
+              <h2 id="post-<?php the_ID(); ?>"><?php the_title();?></h2>
+              <h3 class="pro-name">ชื่อโปรโมชั่น : <?php echo get_post_meta($post->ID, 'pro_name', true); ?></h3>
+              <div class="row data">
+              <div class="col-md-6 built-type">ห้อง : <?php echo get_post_meta($post->ID, 'built_in_type', true); ?></div>
+              <div class="col-md-6 size">พื้นที : <?php echo get_post_meta($post->ID, 'area', true); ?> ตร.ม.</div>
+              <div class="col-md-6 price">ปกติ : <strike><?php echo get_post_meta($post->ID, 'regular_price', true); ?> บาท</strike></div>
+              <div class="col-md-6 price2">ลดเหลือ :  <span class="reduce"><?php echo get_post_meta($post->ID, 'sale_price', true); ?> บาท</span></div>
               </div>
-              <div class="price2">ลดเหลือ :  <span class="reduce">250,000 บาท</span></div>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quasi, eveniet? Ab eos alias reiciendis et cupiditate fuga. Eligendi adipisci sapiente velit exercitationem obcaecati necessitatibus numquam nobis, accusamus unde nam.</p>
               <hr>
+              <p>
+
+              <?php
+                global $more; // hack to use Read More in Pages
+                $more = 0;
+                the_content('<p class="serif">Read the rest of this page »</p>'); 
+            ?>
+            </p>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-            <div class="thumbnail"><img src="http://placehold.it/610x300" class="img-responsive">
-            </div>
-          </div>
-          <div></div>
-          <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-            <div class="thumbnail"><img src="http://placehold.it/610x300" class="img-responsive">
-            </div>
-          </div>
-          <div></div>
-          <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-            <div class="thumbnail"><img src="http://placehold.it/610x300" class="img-responsive">
-            </div>
-          </div>
-          <div></div>
-          <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-            <div class="thumbnail"><img src="http://placehold.it/610x300" class="img-responsive">
-            </div>
-          </div>
-          <div></div>
-          <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-            <div class="thumbnail"><img src="http://placehold.it/610x300" class="img-responsive">
-            </div>
-          </div>
-          <div></div>
-          <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-            <div class="thumbnail"><img src="http://placehold.it/610x300" class="img-responsive">
-            </div>
-          </div>
-          <div></div>
-          <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-            <div class="thumbnail"><img src="http://placehold.it/610x300" class="img-responsive">
-            </div>
-          </div>
-          <div></div>
-          <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-            <div class="thumbnail"><img src="http://placehold.it/610x300" class="img-responsive">
-            </div>
-          </div>
-          <div></div>
-          <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-            <div class="thumbnail"><img src="http://placehold.it/610x300" class="img-responsive">
-            </div>
-          </div>
-          <div></div>
-          <hr>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-          </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-          </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-          </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"></div>
-          </div>
+         
+
+        </div>
         </div>
         <!-- end of col-xs-12 col-sm-4 col-sm-4 col-lg-4 (center) -->
+        <?php endwhile; endif; ?>
 
      
 </div>
