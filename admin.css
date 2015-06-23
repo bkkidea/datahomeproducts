@@ -1,0 +1,8 @@
+.promotion_data_input lable {
+  width: 90px;
+  display: inline-block;
+}
+.promotion_data_input div {
+  margin-top: 5px;
+  display: block;
+}

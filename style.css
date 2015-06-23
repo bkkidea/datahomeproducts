@@ -1,0 +1,137 @@
+/*
+Theme Name: Datahomeproduct co.,ltd.
+Theme URI: http://www.excworld.com
+Author: the Mr.Uthai Thanij
+Author URI: http://excworld.com
+Description: For Datahomeproduct co.,ltd.
+Version: 1.0
+*/
+
+body {
+  padding-top: 50px;
+  padding-bottom: 0px;
+}
+a:hover {
+  text-decoration: none;
+}
+h2,
+h3,
+h4 {
+  font-family: "SukhumvitSet-Text";
+}
+.padding-0 {
+  padding: 0;
+}
+.margin-0 {
+  margin: 0;
+  margin-bottom: 3px;
+}
+.margin-banner-com {
+  margin-bottom: 10px;
+  padding-left: 0px;
+}
+.margin-banner-com img {
+  border: 1px solid #ccc;
+}
+.navbar {
+  margin-bottom: 0px;
+}
+.nav-tabs {
+  margin-bottom: 15px;
+}
+.thumbnail {
+  margin-top: 10px;
+}
+header .jumbotron {
+  border-radius: 0px;
+}
+.main-content {
+  margin-top: 30px;
+}
+#cat-navi select {
+  display: none;
+}
+#cat-navi footer .well {
+  margin-bottom: 0px;
+}
+@media (max-width: 768px) {
+  #cat-navi select {
+    display: block;
+    width: 100%;
+  }
+  #cat-navi li {
+    display: none;
+  }
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .nav-tabs .nav-justified> li {
+    float: left;
+  }
+}
+.widget-tags a {
+  display: inline-block;
+  margin-bottom: 3px;
+}
+.panel-footer {
+  padding: 0;
+  background-color: #fff;
+  text-align: left;
+}
+hr {
+  border-top: 1px solid #dbdbdb;
+}
+.reduce {
+  color: #f00;
+}
+.list-group-item {
+  padding: 8px 15px;
+}
+.promotion-home .panel-heading {
+  background-color: #fff;
+  color: #ff6100;
+  border-bottom: 2px solid #23541e;
+  padding-left: 0px;
+}
+.promotion-home .list-group-item {
+  background-color: #f7f7f7;
+}
+.promotion-home h4 {
+  font-size: 19px;
+  font-family: "SukhumvitSet-SemiBold";
+  letter-spacing: 0.15rem;
+}
+.sname {
+  color: #000;
+}
+.hot-promotion {
+  font-weight: 600;
+  color: #47ad58;
+}
+.well {
+  background: none;
+  padding: 0;
+}
+.well .container {
+  background-color: #009345;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.well .container a {
+  color: #fff;
+}
+.datahome-product h2 {
+  color: #009345;
+  font-size: 28px;
+}
+.datahome-product .price {
+  color: #a3a3a3;
+}
+.datahome-product .price .size,
+.datahome-product .price .price,
+.datahome-product .price .price2,
+.datahome-product .price built-type {
+  font-size: 20px;
+}
