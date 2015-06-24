@@ -79,7 +79,7 @@
     </nav>
     <div class="container">
       <div class="row main-content">
-        <div class="col-xs-4 col-sm-4 col-sm-4 col-lg-4 hidden-xs"><a href="index.php"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" class="img-responsive"></a></div>
+        <div class="col-xs-4 col-sm-4 col-sm-4 col-lg-4 hidden-xs"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" class="img-responsive"></a></div>
         <div class="col-xs-12 col-sm-8 col-sm-8 col-lg-8"><img src="<?php echo get_template_directory_uri(); ?>/images/banner.png" class="img-responsive"></div>
       </div>
       

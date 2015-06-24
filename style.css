@@ -147,3 +147,10 @@ hr {
 .datahome-product .pro-name {
   color: #bb4e00;
 }
+#home-c-left h2 {
+  padding: 5px 15px;
+  color: #bb5c00;
+  border-color: #dbdbdb;
+  font-size: 18px;
+  border-bottom: 1px solid #dbdbdb;
+}

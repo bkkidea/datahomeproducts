@@ -16,7 +16,8 @@ function datahome_promotion() {
       'public' => true,
       'has_archive' => true,
       'rewrite' => array('slug' => 'promotions'),
-      'supports'=>array( 'title', 'excerpt','editor', 'thumbnail')
+      'supports'=>array( 'title', 'excerpt','editor', 'thumbnail'),
+      'taxonomies' => array('post_tag','category')
     )
   );
 }
@@ -85,10 +86,38 @@ add_action( 'init', 'datahome_menus');
  *
  */
 
-add_action( 'widgets_init', 'footer_w1' );
-add_action( 'widgets_init', 'footer_w2' );
-add_action( 'widgets_init', 'footer_w3' );
-add_action( 'widgets_init', 'footer_w4' );
+add_action('widgets_init','footer_w1');
+add_action('widgets_init','footer_w2');
+add_action('widgets_init','footer_w3');
+add_action('widgets_init','footer_w4');
+add_action('widgets_init','home_left');
+add_action('widgets_init','home_right');
+
+
+function home_left() {
+  register_sidebar( array(
+    'name'          => 'home left',
+    'id'            => 'home_left',
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2 class="rounded">',
+    'after_title'   => '</h2>',
+  ) );
+
+}
+
+function home_right() {
+  register_sidebar( array(
+    'name'          => 'home right',
+    'id'            => 'home_right',
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2 class="rounded">',
+    'after_title'   => '</h2>',
+  ) );
+
+}
+
 
 function footer_w1() {
   register_sidebar( array(
