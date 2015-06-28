@@ -112,6 +112,16 @@ hr {
   font-weight: 600;
   color: #47ad58;
 }
+.hot-promotion a {
+  color: #000;
+}
+.hot-promotion .price2 {
+  font-weight: bold;
+  color: #f00;
+}
+.hot-promotion .price {
+  color: #a3a3a3;
+}
 .well {
   background: none;
   padding: 0;
@@ -153,4 +163,13 @@ hr {
   border-color: #dbdbdb;
   font-size: 18px;
   border-bottom: 1px solid #dbdbdb;
+}
+.widget_portfolio {
+  margin-top: 10px;
+}
+.widget_portfolio .panel-heading {
+  padding-bottom: 0;
+}
+.widget_portfolio a {
+  color: #000;
 }

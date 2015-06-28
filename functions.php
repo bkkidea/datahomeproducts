@@ -1,4 +1,11 @@
 <?php
+include ('widget/w-list.php');
+include ('widget/w-port-list.php');
+include ('widget/w-datahome-hotpro.php');
+include ('widget/w-datahome-onpro.php');
+// add_action( 'widgets_init', function(){
+//      register_widget( 'My_Widget' );
+// });
 
 // Enable theme support
 add_theme_support( 'post-thumbnails' );
@@ -9,7 +16,7 @@ function datahome_promotion() {
   register_post_type('promotions',
     array(
       'labels' => array(
-        'name' => __( 'Promotion' ),
+        'name' => __( 'โปรโมชั่น' ),
         'search_items' =>('Search Promotions'),
         'singular_name' => ('promotions')
       ),
@@ -21,6 +28,26 @@ function datahome_promotion() {
     )
   );
 }
+
+// Crate Post of Portfolio
+add_action( 'init', 'datahome_portfolio' );
+function datahome_portfolio() {
+  register_post_type('portfolios',
+    array(
+      'labels' => array(
+        'name' => __( 'ผลงาน' ),
+        'search_items' =>('Search Portfolios'),
+        'singular_name' => ('portfolios')
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'portfolios'),
+      'supports'=>array( 'title', 'excerpt','editor', 'thumbnail'),
+      'taxonomies' => array('post_tag')
+    )
+  );
+}
+
 
 // Add meta box of Promotion
 // 
@@ -36,13 +63,17 @@ function promtion_detail() {
 
 function promotion_data_input(){
   global $post;
+  $pro_hot = get_post_meta($post->ID, 'pro_hot', true);
   $pro_name = get_post_meta($post->ID, 'pro_name', true);
   $built_in_type = get_post_meta($post->ID, 'built_in_type', true);
   $area = get_post_meta($post->ID, 'area', true);
   $regular_price = get_post_meta($post->ID, 'regular_price', true);
   $sale_price = get_post_meta($post->ID, 'sale_price', true);
+  $check ='';
+  if($pro_hot=='hot')$check = 'checked="checked" ';
   
   echo '<div class="promotion_data_input">';
+  echo '<div><lable>HOT  :</lable><input type="checkbox" name="pro_hot" id="pro_hot" value="hot" '.$check.' ></div>';
   echo '<div><lable>ชื่อโปรโมชั่น :</lable><input type="text" name="pro_name" id="pro_name" value="'.$pro_name.'" /> </div>';
   echo '<div><lable>ประเภทห้อง :</lable><input type="text" name="built_in_type" id="built_in_type" value="'.$built_in_type.'" /> </div>';
   echo '<div><lable>พื้นที่ : </lable><input type="text" name="area" id="area" value="'.$area.'" /> ตร.ม.</div>';
@@ -58,6 +89,7 @@ function save_promotion(){
   update_post_meta($post->ID, "regular_price", $_POST["regular_price"]);
   update_post_meta($post->ID, "sale_price", $_POST["sale_price"]);
   update_post_meta($post->ID, "pro_name", $_POST["pro_name"]);
+  update_post_meta($post->ID, "pro_hot", $_POST["pro_hot"]);
 }
 
 add_action( 'add_meta_boxes', 'promtion_detail' );
@@ -86,13 +118,30 @@ add_action( 'init', 'datahome_menus');
  *
  */
 
+add_action('widgets_init','side_bar');
+add_action('widgets_init','home_left');
+add_action('widgets_init','home_right');
+
 add_action('widgets_init','footer_w1');
 add_action('widgets_init','footer_w2');
 add_action('widgets_init','footer_w3');
 add_action('widgets_init','footer_w4');
-add_action('widgets_init','home_left');
-add_action('widgets_init','home_right');
 
+
+
+
+
+function side_bar() {
+  register_sidebar( array(
+    'name'          => 'side bar',
+    'id'            => 'side_bar',
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2 class="rounded">',
+    'after_title'   => '</h2>',
+  ) );
+
+}
 
 function home_left() {
   register_sidebar( array(

@@ -45,6 +45,9 @@
       </div>
       <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.js" type="text/javascript"></script>
       <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
+      
+
+
       <script type="text/javascript">
         jQuery(function (jQuery) {
         		jQuery("#cat-navi").append("<select/>");

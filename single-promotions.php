@@ -35,7 +35,11 @@
         <!-- end of col-xs-12 col-sm-4 col-sm-4 col-lg-4 (center) -->
         <?php endwhile; endif; ?>
 
-     
+    <!-- Gallery  -->
+   
+
+    <!-- End Gallery -->
+
 </div>
 <!--  end of row main-content -->
 <?php get_footer(); ?>

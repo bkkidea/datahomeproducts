@@ -1,28 +1,15 @@
 <div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
-          <div class="list-group panel panel-default">
-            <div class="panel-heading padding-0 hot-promotion">
-              <h4>HOT PROMOTION</h4>
-            </div>
-            <div class="panel-body padding-0">
-              <div class="thumbnail"><img src="<?php echo get_template_directory_uri(); ?>/images/blogpost6.jpg" class="img-responsive">
-                <div class="caption">
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <h5><a href="">title header long long title header test</a></h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="list-group panel panel-primary promotion-home">
+
+          <?php dynamic_sidebar( 'home right' ); ?>
+          
+<!--           <div class="list-group panel panel-primary promotion-home">
             <div class="panel-heading text-left hidden-xs">
               <h4>โปรโมชั่น  <span class="sname">| ดาต้าโฮมโปรดักส์</span></h4>
             </div><a href="#" class="list-group-item hidden-xs"> <i class="icon-gift"></i> | ศุภาลัย เวลลิงตัน</a><a href="#" class="list-group-item hidden-xs"> <i class="icon-gift"></i> | ศุภาลัย ปาร์ค เอกมัย-ทองหล่อ</a><a href="#" class="list-group-item hidden-xs"><i class="icon-gift"></i> | ลุมพินี เพลส สุขสวัสดิ์-พระราม2</a><a href="#" class="list-group-item hidden-xs"><i class="icon-gift"></i> | ลุมพินี เพลส ศรีนครินทร์ - หัวหมาก</a><a href="#" class="list-group-item hidden-xs"><i class="icon-gift"></i> | ลุมพินี เพลส พระราม9-รัชดา</a><a href="#" class="list-group-item hidden-xs"><i class="icon-gift"></i> | ลุมพินี รัตนาธิเบศ-งามวงศ์วาน</a>
             <div class="panel-footer">
               <hr class="margin-0"><a href="#" class="btn"><i class="icon-list-alt"> โปรโมชั่นทั้งหมด</i></a>
             </div>
-          </div>
+          </div> -->
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 margin-banner-com">
             <img src="<?php echo get_template_directory_uri(); ?>/images/logo-Supalai-Wellington.jpg" class="img-responsive"></image>
           </div>

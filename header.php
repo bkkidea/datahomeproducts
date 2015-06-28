@@ -10,10 +10,18 @@
     <?php wp_head(); ?>
         
   </head>
+
   <link href="<?php echo get_template_directory_uri(); ?>/assets/css/theme-flat-ui.css" rel="stylesheet">
   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?php echo get_template_directory_uri(); ?>/style.css" rel="stylesheet">
-  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/SukumvitSet/font.css" rel="stylesheet"><!--[if lt IE 7]>
+  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/SukumvitSet/font.css" rel="stylesheet">
+  
+  <!-- Gallery -->
+  <link href="<?php echo get_template_directory_uri(); ?>/assets/bootstrap-lightbox/bootstrap-lightbox.min.css" rel="stylesheet">
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/bootstrap-lightbox/bootstrap-lightbox.min.js" type="text/javascript"></script>
+
+
+  <!--[if lt IE 7]>
   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet"><![endif]-->
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script><![endif]-->
